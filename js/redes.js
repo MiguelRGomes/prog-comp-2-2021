@@ -40,6 +40,7 @@ let gerenciaRedesSociais = () => {
        i++
     }
     // Exericio1. o usuário informa a rede social, e o programa retorna quantos post foram feitos
+
     let codigo = Number(prompt(`Informe o código da rede social`))
     // percorre vetor procurando
     let conta = 0 
@@ -56,6 +57,20 @@ let gerenciaRedesSociais = () => {
     }
 
     // Exericio2. o programa retorna quantos post foram feito em todas as redes sociais
+
+    for(let i=0;i<5;i++){ 
+        let conta = 0
+        for(let j=0;j<5;j++){ // procura no usuarios
+            if(vetorRedesSociais[i.codigo == vetorUsuarios[j].codigoRedeSocial){
+                conta = conta + vetorUsuarios[i].qtdePost
+            }
+        }
+        // terminou de soma os posts de uma rede social
+        console.log(`A quantidade de post da rede social ${vetorRedesSociais[i].codigo} é ${conta}`)
+    }
+
     // Exericio3. o usuário informa o login do usuario, e o programa retorna quantos post ele fez
+
+
     // Exericio4. o programa retorna quantos post foram feito por cada usuário
 }
