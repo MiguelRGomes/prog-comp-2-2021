@@ -61,8 +61,8 @@ let gerenciaRedesSociais = () => {
     for(let i=0;i<5;i++){ 
         let conta = 0
         for(let j=0;j<5;j++){ // procura no usuarios
-            if(vetorRedesSociais[i.codigo == vetorUsuarios[j].codigoRedeSocial){
-                conta = conta + vetorUsuarios[i].qtdePost
+            if(vetorRedesSociais[i].codigo == vetorUsuarios[j].codigoRedeSocial){
+                conta = conta + vetorRedesSociais[i].qtdePost
             }
         }
         // terminou de soma os posts de uma rede social
@@ -70,8 +70,43 @@ let gerenciaRedesSociais = () => {
     }
     
     // Exericio3. o usuário informa o login do usuario, e o programa retorna quantos post ele fez
-    
-    
-    
+
+    let login = prompt(`Informe o login do usuario desejado`)
+    // procura o login no veto de usuario
+    let somaPosts = 0
+    let achou = false // não encontrei o usuario
+    for(let i=0;i<5;i++){
+        if(login == vetorUsuarios[i].login){ // achei o usuario procurado
+            somaPosts = somaPosts + vetorUsuarios[i].qtdePost
+            achou = true // achou o usuario
+        }
+    }
+    if(achou){
+        alert(`O usuario com login ${login} realizou ${somaPosts}`)
+    }
+    else {
+        alert(`Usuario não encontrado`)
+    }
+
     // Exericio4. o programa retorna quantos post foram feito por cada usuário
+
+    let vetorUsuariosPosts = []
+    for(let i=0;i<5;i++){
+        let achou = false
+        for(let j=0; j<vetorUsuariosPosts.length;j++){ // verifica se o usuario 
+            if (vetorUsuarios[i].login == vetorUsuariosPosts[i.login]){ // usuario já existe
+                // soma a quantidade de posts do usuario
+                vetorUsuariosPosts[j].qtde = vetorUsuariosPosts[j].qtde + vetorUsuarios[i].qtdePost
+                achou = true
+            }
+        }
+        // usuario ainda não existe no vetor vetorusuariosPosts, então vamos criar
+        if (!achou){
+            vetorUsuariosPosts.push({
+                login: vetorUsuarios[i].login,
+                qtde: vetorUsuarios[i].qtdePost
+            })
+        }
+    }
+    console.log(vetorUsuariosPosts)
 }
