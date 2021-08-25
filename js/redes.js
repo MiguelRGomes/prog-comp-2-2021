@@ -68,9 +68,10 @@ let gerenciaRedesSociais = () => {
         // terminou de soma os posts de uma rede social
         console.log(`A quantidade de post da rede social ${vetorRedesSociais[i].codigo} é ${conta}`)
     }
-
+    
     // Exericio3. o usuário informa o login do usuario, e o programa retorna quantos post ele fez
-
-
+    
+    
+    
     // Exericio4. o programa retorna quantos post foram feito por cada usuário
 }
